@@ -191,17 +191,30 @@
         if (!!customResult && !!customResult.name && !!customResult.url) {
           this.fieldModel.push({
             name: customResult.name,
-            url: customResult.url
+            url: customResult.url,
+            attachmentName: customResult.attachmentName,
+            extension: customResult.extension,
+            filePath: customResult.filePath,
+            isDelete: customResult.isDelete,
+            processIdRecordFileId: customResult.processIdRecordFileId,
+            urlFilePath: customResult.urlFilePath,
+            processRecordId: customResult.processRecordId,
           })
         } else if (!!defaultResult && !!defaultResult.name && !!defaultResult.url) {
           this.fieldModel.push({
             name: defaultResult.name,
-            url: defaultResult.url
+            url: defaultResult.url,
+            attachmentName: defaultResult.attachmentName,
+            extension: defaultResult.extension,
+            filePath: defaultResult.filePath,
+            isDelete: defaultResult.isDelete,
+            processIdRecordFileId: defaultResult.processIdRecordFileId,
+            urlFilePath: defaultResult.urlFilePath,
+            processRecordId: defaultResult.processRecordId,
           })
         } else {
           this.fieldModel = deepClone(fileList)
         }
-
         this.syncUpdateFormModel(this.fieldModel)
         this.emitFieldDataChange(this.fieldModel, oldValue)
       },
@@ -216,9 +229,9 @@
 
           this.updateFieldModelAndEmitDataChangeForUpload(fileList, customResult, res)
           if (!!customResult && !!customResult.name) {
-            file.name = customResult.name
+            file.name = customResult.name;
           } else {
-            file.name = file.name || res.name || res.fileName || res.filename
+            file.name = file.name || res.name || res.fileName || res.filename;
           }
           if (!!customResult && !!customResult.url) {
             file.url = customResult.url
