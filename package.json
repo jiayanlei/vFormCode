@@ -1,6 +1,6 @@
 {
-  "name": "variant-form3",
-  "version": "3.0.10",
+  "name": "bchd_vform",
+  "version": "0.0.3",
   "private": false,
   "scripts": {
     "serve": "vite",
@@ -9,6 +9,9 @@
     "lib-render": "vite build --config vite-lib-render.config.js",
     "preview": "vite preview"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@element-plus/icons-vue": "^0.2.4",
     "axios": "^0.24.0",
